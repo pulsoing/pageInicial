@@ -577,7 +577,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* MOBILE */
+/* MOBILE - ORDEN CORREGIDO */
 @media (max-width: 768px) {
     .hero-container {
         grid-template-columns: 1fr;
@@ -585,8 +585,15 @@ body {
         text-align: center;
     }
 
+    /* CAMBIO AQUÍ: Texto IZQUIERDA PRIMERO */
     .hero-services {
-        order: -1;
+        order: 2;
+        /* ← Ahora aparece DESPUÉS */
+    }
+
+    .hero-content {
+        order: 1;
+        /* ← Texto aparece PRIMERO */
     }
 
     .hero {
