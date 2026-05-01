@@ -462,3 +462,134 @@ body {
         height: 50px !important;
     }
 }
+
+/* HERO 2-COLUMNAS */
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 120px 2rem 80px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+}
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+    font-size: 1.1rem;
+}
+
+.hero-features span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+/* SERVICIOS DESTACADOS DERECHA */
+.hero-services {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 2.5rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.services-highlight h3 {
+    color: white;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.service-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+
+.service-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.service-item h4 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.service-item p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+}
+
+.cta-secondary {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(16, 185, 129, 0.2);
+    border: 2px solid rgba(16, 185, 129, 0.4);
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.cta-secondary:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-services {
+        order: -1;
+    }
+
+    .hero {
+        padding: 100px 1rem 60px;
+    }
+}
