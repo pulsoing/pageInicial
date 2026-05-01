@@ -392,20 +392,28 @@ body {
     color: white;
     border-radius: 50%;
     font-size: 1.8rem;
-    box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
     transition: all 0.3s;
     animation: pulse 2s infinite;
 }
 
 .whatsapp-float a:hover {
     transform: scale(1.1);
-    box-shadow: 0 12px 35px rgba(37,211,102,0.6);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* CONTACTO - AGREGAR WHATSAPP */
@@ -430,4 +438,27 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* LOGO PERSONALIZADO - MÁS GRANDE */
+.logo-img {
+    height: 60px !important;
+    /* ← MÁS GRANDE */
+    width: auto;
+    max-height: 70px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 20px rgba(37, 99, 235, 0.3));
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 50px !important;
+    }
 }
