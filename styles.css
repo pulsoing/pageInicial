@@ -148,8 +148,17 @@ body {
 
 .servicios-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    /* ← 2x2 perfecto */
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        /* Móvil 1 columna */
+    }
 }
 
 .servicio-card {
@@ -600,3 +609,58 @@ body {
         padding: 100px 1rem 60px;
     }
 }
+
+/* ===== PEGAR AQUÍ - AL FINAL DEL ARCHIVO ===== */
+
+/* SERVICIOS - ESTILO MEJORADO */
+.sub-highlight {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    margin: 1.2rem 0 0.8rem;
+    padding: 0.5rem 0;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    font-size: 1rem !important;
+}
+
+.sub-item {
+    font-size: 0.92rem;
+    padding: 0.6rem 0;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.sub-item:hover {
+    background: rgba(37, 99, 235, 0.05);
+    padding-left: 1rem;
+}
+
+.servicio-card.expanded {
+    min-height: 420px;
+    padding-bottom: 1.5rem;
+}
+
+/* ICONOS SEPARADOS + 2x2 */
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    /* ← MÁS espacio icono-texto */
+}
+
+.servicio-card i {
+    font-size: 2.8rem;
+    /* Iconos más grandes */
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.servicio-card h3 {
+    margin: 0;
+    line-height: 1.3;
+    font-size: 1.4rem;
+}
+
+/* ===== FIN ===== */

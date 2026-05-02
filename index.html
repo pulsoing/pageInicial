@@ -44,65 +44,170 @@
     <!-- INICIO -->
     <section id="inicio" class="hero">
         <div class="hero-container">
-        <!-- COLUMNA IZQUIERDA -->
-        <div class="hero-content">
-            <h1>Soluciones TI que Impulsan tu Negocio</h1>
-            <p><strong>Automatización inteligente</strong> con plataforma de integración completa.</p>
-            <p>Diseñamos flujos que conectan tus sistemas (correos, planillas, bases de datos, apps web) para ejecutar tareas repetitivas automáticamente, en ambiente 100% seguro.</p>
-            <div class="hero-features">
-                <span>⚡ Procesos 24/7</span>
-                <span>🔒 Seguridad enterprise</span>
-                <span>📱 Acceso móvil</span>
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="hero-content">
+                <h1>Soluciones TI que Impulsan tu Negocio</h1>
+                <p><strong>Automatización inteligente</strong> con plataforma de integración completa.</p>
+                <p>Diseñamos flujos que conectan tus sistemas (correos, planillas, bases de datos, apps web) para
+                    ejecutar tareas repetitivas automáticamente, en ambiente 100% seguro.</p>
+                <div class="hero-features">
+                    <span>⚡ Procesos 24/7</span>
+                    <span>🔒 Seguridad enterprise</span>
+                    <span>📱 Acceso móvil</span>
+                </div>
+                <a href="#servicios" class="cta-button">Ver Todos los Servicios</a>
             </div>
-            <a href="#servicios" class="cta-button">Ver Todos los Servicios</a>
-        </div>
 
-        <!-- COLUMNA DERECHA - SERVICIOS PYME -->
-        <div class="hero-services">
-            <div class="services-highlight">
-                <h3>🚀 Servicios Especiales para PYMEs</h3>
-                <div class="service-item">
-                    <i class="fas fa-laptop-code"></i>
-                    <h4>Desarrollo Web & Apps</h4>
-                    <p>Plataformas administradas y monitoreadas en tiempo real desde PC/celular.</p>
+            <!-- COLUMNA DERECHA - SERVICIOS PYME -->
+            <div class="hero-services">
+                <div class="services-highlight">
+                    <h3>🚀 Servicios Especiales para PYMEs</h3>
+                    <div class="service-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <h4>Desarrollo Web & Apps</h4>
+                        <p>Plataformas administradas y monitoreadas en tiempo real desde PC/celular.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h4>Gestión de Solicitudes</h4>
+                        <p>Compras, reservas de servicios, control de horas y flujos aprobados.</p>
+                    </div>
+                    <a href="#servicios" class="cta-secondary">Ver Detalles →</a>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-shopping-cart"></i>
-                    <h4>Gestión de Solicitudes</h4>
-                    <p>Compras, reservas de servicios, control de horas y flujos aprobados.</p>
-                </div>
-                <a href="#servicios" class="cta-secondary">Ver Detalles →</a>
             </div>
         </div>
-    </div>
     </section>
 
 
     <!-- SERVICIOS -->
+    <!-- SERVICIOS COMPLETOS - DETALLADOS -->
     <section id="servicios" class="servicios">
         <div class="container">
             <h2>Nuestros Servicios</h2>
             <div class="servicios-grid">
-                <div class="servicio-card">
-                    <i class="fas fa-robot"></i>
-                    <h3>Automatización TI</h3>
-                    <p>Optimiza tus procesos con scripts y herramientas automáticas.</p>
+
+                <!-- 1. AUTOMATIZACIÓN TI -->
+                <div class="servicio-card expandable">
+                    <div class="card-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>Automatización TI</h3>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Tomamos las tareas tediosas y repetitivas de TI y las dejamos en automático.</p>
+                    </div>
+                    <div class="sub-services">
+                        <div class="sub-highlight">
+                            <strong>Ejemplos para PYMEs:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-users-cog"></i>Creación/desactivación usuarios
+                            (correo/accesos)</div>
+                        <div class="sub-item"><i class="fas fa-database"></i>Backups automáticos bases de datos/archivos
+                        </div>
+                        <div class="sub-item"><i class="fas fa-trash-alt"></i>Limpieza carpetas temporales/logs</div>
+                        <div class="sub-item"><i class="fas fa-upload"></i>Envío archivos (FTP/SharePoint)</div>
+                        <div class="sub-item"><i class="fas fa-heartbeat"></i>Revisión salud servicios
+                            (alertas/reinicio)</div>
+                        <div class="sub-highlight">
+                            <strong>Entrega típica:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-check-double"></i>3-10 tareas + manual + diagramas</div>
+                    </div>
                 </div>
-                <div class="servicio-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Dashboards e Informes</h3>
-                    <p>Visualiza tus datos con paneles personalizados y reportes automáticos.</p>
+
+                <!-- 2. DASHBOARDS E INFORMES -->
+                <div class="servicio-card expandable">
+                    <div class="card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Dashboards e Informes</h3>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Informes que se generan solos, sin "armar Excel todos los lunes".</p>
+                    </div>
+                    <div class="sub-services">
+                        <div class="sub-highlight">
+                            <strong>Ejemplos para PYMEs:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-coins"></i>Reporte ventas producto/sucursal</div>
+                        <div class="sub-item"><i class="fas fa-ticket-alt"></i>Reporte tickets soporte (tiempos)</div>
+                        <div class="sub-item"><i class="fas fa-users"></i>Uso sistemas (quién/cuánto)</div>
+                        <div class="sub-item"><i class="fas fa-boxes"></i>Stock/inventario (alertas quiebre)</div>
+                        <div class="sub-highlight">
+                            <strong>Formatos:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-file-pdf"></i>PDF por correo</div>
+                        <div class="sub-item"><i class="fas fa-tachometer-alt"></i>Dashboard web</div>
+                        <div class="sub-item"><i class="fas fa-file-excel"></i>CSV/Excel compartido</div>
+                    </div>
                 </div>
-                <div class="servicio-card">
-                    <i class="fas fa-server"></i>
-                    <h3>Monitoreo e Inventario</h3>
-                    <p>Control total de tus activos TI con alertas en tiempo real.</p>
+
+                <!-- 3. MONITOREO E INVENTARIO -->
+                <div class="servicio-card expandable">
+                    <div class="card-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Monitoreo e Inventario</h3>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="card-content">
+                        <p>"Que no se enteren por el cliente que está caído".</p>
+                    </div>
+                    <div class="sub-services">
+                        <div class="sub-highlight">
+                            <strong>Infraestructura:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-microchip"></i>Servidores (CPU/RAM/disco)</div>
+                        <div class="sub-item"><i class="fas fa-shield-alt"></i>Equipos críticos (firewall/NAS)</div>
+                        <div class="sub-item"><i class="fas fa-globe"></i>Sitios web (ping/HTTP)</div>
+                        <div class="sub-highlight">
+                            <strong>Procesos negocio:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-cogs"></i>Validación flujos clave</div>
+                        <div class="sub-highlight">
+                            <strong>Inventario + Alertas:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-sms"></i>Correo/WhatsApp + matriz alertas</div>
+                    </div>
                 </div>
-                <div class="servicio-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Soporte y Acompañamiento</h3>
-                    <p>Asesoría continua para mantener tu infraestructura óptima.</p>
+
+                <!-- 4. SERVICIOS PYMEs -->
+                <div class="servicio-card expandable">
+                    <div class="card-header">
+                        <i class="fas fa-store"></i>
+                        <h3>Servicios Especiales PYMEs</h3>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Tecnología práctica y escalable para tu negocio.</p>
+                    </div>
+                    <div class="sub-services">
+                        <div class="sub-highlight">
+                            <strong>Desarrollo Web/Apps:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-laptop-code"></i>Portales internos/dashboards</div>
+                        <div class="sub-item"><i class="fas fa-mobile-alt"></i>Sitios responsive/administrables</div>
+                        <div class="sub-highlight">
+                            <strong>Automatización:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-envelope"></i>Correos pagos/renovaciones</div>
+                        <div class="sub-item"><i class="fas fa-file-alt"></i>Generación documentos</div>
+                        <div class="sub-highlight">
+                            <strong>Integración:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-exchange-alt"></i>Factura → registro automático</div>
+                        <div class="sub-item"><i class="fas fa-sync"></i>Sincronización sistemas</div>
+                        <div class="sub-highlight">
+                            <strong>Notificaciones:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-bell"></i>Alertas fallas/procesos</div>
+                        <div class="sub-highlight">
+                            <strong>Acompañamiento:</strong>
+                        </div>
+                        <div class="sub-item"><i class="fas fa-handshake"></i>Levantamiento + implementación + soporte
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
