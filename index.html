@@ -9,13 +9,39 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
+<!-- EMAILJS FUNCIONAL -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+    emailjs.init("UOaCgQgtbZxgjW4Ij"); // ← TU_PUBLIC_KEY_AQUÍ
+
+    document.querySelector('.contacto-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nombre = this.querySelector('input[type="text"]').value;
+        const email = this.querySelector('input[type="email"]').value;
+        const mensaje = this.querySelector('textarea').value;
+
+        emailjs.send('service_4ws6f8g', 'contacto_template', {
+            from_name: nombre,
+            from_email: email,
+            from_phone: '+56971268624',
+            message: mensaje
+        }).then(() => {
+            alert('✅ ¡Enviado a contacto@pulsoing.cl!');
+            this.reset();
+        }).catch(() => {
+            alert('❌ Error. WhatsApp: +56971268624');
+        });
+    });
+</script>
+
 <body>
     <!-- HEADER/NAVEGACIÓN   -->
     <header class="header">
         <nav class="navbar">
             <!-- WHATSAPP FLOATING BUTTON -->
             <div class="whatsapp-float">
-                <a href="https://wa.me/56971268624?text=¡Hola!%20Quiero%20saber%20más%20sobre%20sus%20servicios"
+                <a href="https://wa.me/56971268624?text=¡Hola!%20Vi%20contacto@pulsoing.cl%20y%20quiero%20saber%20más"
                     target="_blank">
                     <i class="fab fa-whatsapp"></i>
                 </a>
@@ -30,7 +56,7 @@
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#nosotros">Quiénes Somos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
-                    <p><i class="fas fa-envelope"></i> hola@pulsoing.cl</p>
+                    <p><i class="fas fa-envelope"></i> contacto@pulsoing.cl</p>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -220,7 +246,8 @@
                 <div class="nosotros-text">
                     <p>Somos un equipo de especialistas en TI apasionados por la tecnología que simplifica la vida de
                         las empresas.</p>
-                    <p>Con años de experiencia en automatización y monitoreo, ayudamos a empresas como la tuya a ser más
+                    <p>Con años de experiencia en desarrollo, automatización y monitoreo, ayudamos a empresas como la
+                        tuya a ser más
                         eficientes.</p>
                     <ul>
                         <li>✅ +5 años de experiencia</li>
@@ -241,7 +268,7 @@
                     <h3>¡Hablemos de tu proyecto!</h3>
                     <p>Envíanos un mensaje y te contactaremos en menos de 24 horas.</p>
                     <div class="contacto-details">
-                        <p><i class="fas fa-envelope"></i> hola@pulsoing.cl</p>
+                        <p><i class="fas fa-envelope"></i> contacto@pulsoing.cl</p>
                         <p><i class="fas fa-phone"></i> +56 9 7126 8624</p>
                         <a href="https://wa.me/56971268624" class="whatsapp-icon" target="_blank">
                             <i class="fab fa-whatsapp"></i>
