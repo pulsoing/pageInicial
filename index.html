@@ -9,43 +9,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
-<!-- EMAILJS FUNCIONAL -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-    emailjs.init("UOaCgQgtbZxgjW4Ij"); // ← TU_PUBLIC_KEY_AQUÍ
-
-    document.querySelector('.contacto-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const nombre = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const mensaje = this.querySelector('textarea').value;
-
-        emailjs.send('service_4ws6f8g', 'contacto_template', {
-            from_name: nombre,
-            from_email: email,
-            from_phone: '+56971268624',
-            message: mensaje
-        }).then(() => {
-            alert('✅ ¡Enviado a contacto@pulsoing.cl!');
-            this.reset();
-        }).catch(() => {
-            alert('❌ Error. WhatsApp: +56971268624');
-        });
-    });
-</script>
-
 <body>
-    <!-- HEADER/NAVEGACIÓN   -->
+    <!-- HEADER/NAVEGACIÓN -->
     <header class="header">
         <nav class="navbar">
-            <!-- WHATSAPP FLOATING BUTTON -->
-            <div class="whatsapp-float">
-                <a href="https://wa.me/56971268624?text=¡Hola!%20Vi%20contacto@pulsoing.cl%20y%20quiero%20saber%20más"
-                    target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
             <div class="nav-container">
                 <div class="logo">
                     <img src="Logo-PulsoIng.png" alt="PulsoIng" class="logo-img">
@@ -56,7 +23,6 @@
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#nosotros">Quiénes Somos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
-                    <p><i class="fas fa-envelope"></i> contacto@pulsoing.cl</p>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -66,6 +32,15 @@
             </div>
         </nav>
     </header>
+
+    <!-- WHATSAPP FLOAT (fuera del nav) -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/56971268624?text=¡Hola!%20Vi%20contacto@pulsoing.cl%20y%20quiero%20saber%20más"
+            target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
 
     <!-- INICIO -->
     <section id="inicio" class="hero">
@@ -126,18 +101,16 @@
                         <div class="sub-highlight">
                             <strong>Ejemplos para PYMEs:</strong>
                         </div>
-                        <div class="sub-item"><i class="fas fa-users-cog"></i>Creación/desactivación usuarios
-                            (correo/accesos)</div>
-                        <div class="sub-item"><i class="fas fa-database"></i>Backups automáticos bases de datos/archivos
+                        <div class="sub-item"><i class="fas fa-users-cog"></i> Gestión usuarios (correo/accesos)</div>
+                        <div class="sub-item"><i class="fas fa-database"></i> Administración bases de datos/archivos
                         </div>
-                        <div class="sub-item"><i class="fas fa-trash-alt"></i>Limpieza carpetas temporales/logs</div>
-                        <div class="sub-item"><i class="fas fa-upload"></i>Envío archivos (FTP/SharePoint)</div>
-                        <div class="sub-item"><i class="fas fa-heartbeat"></i>Revisión salud servicios
+                        <div class="sub-item"><i class="fas fa-heartbeat"></i> Revisión salud servicios
                             (alertas/reinicio)</div>
                         <div class="sub-highlight">
                             <strong>Entrega típica:</strong>
                         </div>
-                        <div class="sub-item"><i class="fas fa-check-double"></i>3-10 tareas + manual + diagramas</div>
+                        <div class="sub-item"><i class="fas fa-check-double"></i> 3-10 tareas + manual + diagramas
+                        </div>
                     </div>
                 </div>
 
@@ -155,16 +128,13 @@
                         <div class="sub-highlight">
                             <strong>Ejemplos para PYMEs:</strong>
                         </div>
-                        <div class="sub-item"><i class="fas fa-coins"></i>Reporte ventas producto/sucursal</div>
-                        <div class="sub-item"><i class="fas fa-ticket-alt"></i>Reporte tickets soporte (tiempos)</div>
-                        <div class="sub-item"><i class="fas fa-users"></i>Uso sistemas (quién/cuánto)</div>
-                        <div class="sub-item"><i class="fas fa-boxes"></i>Stock/inventario (alertas quiebre)</div>
+                        <div class="sub-item"><i class="fas fa-coins"></i> Reporte y métricas actividad diaria</div>
                         <div class="sub-highlight">
                             <strong>Formatos:</strong>
                         </div>
-                        <div class="sub-item"><i class="fas fa-file-pdf"></i>PDF por correo</div>
-                        <div class="sub-item"><i class="fas fa-tachometer-alt"></i>Dashboard web</div>
-                        <div class="sub-item"><i class="fas fa-file-excel"></i>CSV/Excel compartido</div>
+                        <div class="sub-item"><i class="fas fa-file-pdf"></i> PDF por correo</div>
+                        <div class="sub-item"><i class="fas fa-tachometer-alt"></i> Dashboard web</div>
+                        <div class="sub-item"><i class="fas fa-file-excel"></i> CSV/Excel compartido</div>
                     </div>
                 </div>
 
@@ -182,13 +152,12 @@
                         <div class="sub-highlight">
                             <strong>Infraestructura:</strong>
                         </div>
-                        <div class="sub-item"><i class="fas fa-microchip"></i>Servidores (CPU/RAM/disco)</div>
-                        <div class="sub-item"><i class="fas fa-shield-alt"></i>Equipos críticos (firewall/NAS)</div>
-                        <div class="sub-item"><i class="fas fa-globe"></i>Sitios web (ping/HTTP)</div>
+                        <div class="sub-item"><i class="fas fa-shield-alt"></i> Equipos críticos </div>
+                        <div class="sub-item"><i class="fas fa-globe"></i> Sitios web </div>
                         <div class="sub-highlight">
                             <strong>Procesos negocio:</strong>
                         </div>
-                        <div class="sub-item"><i class="fas fa-cogs"></i>Validación flujos clave</div>
+                        <div class="sub-item"><i class="fas fa-cogs"></i> Validación flujos clave</div>
                         <div class="sub-highlight">
                             <strong>Inventario + Alertas:</strong>
                         </div>
@@ -210,27 +179,19 @@
                         <div class="sub-highlight">
                             <strong>Desarrollo Web/Apps:</strong>
                         </div>
-                        <div class="sub-item"><i class="fas fa-laptop-code"></i>Portales internos/dashboards</div>
-                        <div class="sub-item"><i class="fas fa-mobile-alt"></i>Sitios responsive/administrables</div>
+                        <div class="sub-item"><i class="fas fa-laptop-code"></i> Portales internos/dashboards</div>
                         <div class="sub-highlight">
                             <strong>Automatización:</strong>
                         </div>
-                        <div class="sub-item"><i class="fas fa-envelope"></i>Correos pagos/renovaciones</div>
-                        <div class="sub-item"><i class="fas fa-file-alt"></i>Generación documentos</div>
+                        <div class="sub-item"><i class="fas fa-envelope"></i> Actividades diarias</div>
                         <div class="sub-highlight">
                             <strong>Integración:</strong>
                         </div>
-                        <div class="sub-item"><i class="fas fa-exchange-alt"></i>Factura → registro automático</div>
                         <div class="sub-item"><i class="fas fa-sync"></i>Sincronización sistemas</div>
                         <div class="sub-highlight">
                             <strong>Notificaciones:</strong>
                         </div>
-                        <div class="sub-item"><i class="fas fa-bell"></i>Alertas fallas/procesos</div>
-                        <div class="sub-highlight">
-                            <strong>Acompañamiento:</strong>
-                        </div>
-                        <div class="sub-item"><i class="fas fa-handshake"></i>Levantamiento + implementación + soporte
-                        </div>
+                        <div class="sub-item"><i class="fas fa-bell"></i>Alertas fallas/procesos/solicitudes</div>
                     </div>
                 </div>
 
@@ -244,9 +205,11 @@
             <h2>Quiénes Somos</h2>
             <div class="nosotros-content">
                 <div class="nosotros-text">
-                    <p>Somos un equipo de especialistas en TI apasionados por la tecnología que simplifica la vida de
+                    <p>Somos un equipo de especialistas en TI apasionados por la tecnología que simplifica la vida
+                        de
                         las empresas.</p>
-                    <p>Con años de experiencia en desarrollo, automatización y monitoreo, ayudamos a empresas como la
+                    <p>Con años de experiencia en desarrollo, automatización y monitoreo, ayudamos a empresas como
+                        la
                         tuya a ser más
                         eficientes.</p>
                     <ul>
@@ -293,6 +256,45 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- EMAILJS (DESPUÉS de script.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init("xnSKdlQq77ATixWxE");
+
+        document.querySelector('.contacto-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            e.stopPropagation(); // ← EVITA SALTO
+
+            const form = this;
+            const nombre = form.querySelector('input[type="text"]').value;
+            const email = form.querySelector('input[type="email"]').value;
+            const mensaje = form.querySelector('textarea').value;
+
+            const btn = form.querySelector('button');
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+
+            emailjs.send('service_j2iw2ie', 'template_n55yi7w', {
+                from_name: nombre,
+                from_email: email,
+                from_phone: '+56971268624',
+                message: mensaje
+            })
+                .then(response => {
+                    console.log('✅ ÉXITO!', response.status);
+                    alert('✅ Enviado a contacto@pulsoing.cl');
+                    form.reset();
+                })
+                .catch(error => {
+                    console.log('❌ ERROR:', error);
+                    alert('❌ ' + (error.text || 'Error desconocido'));
+                })
+                .finally(() => {
+                    btn.textContent = 'Enviar Mensaje';
+                    btn.disabled = false;
+                });
+        });
+    </script>
 </body>
 
 </html>
