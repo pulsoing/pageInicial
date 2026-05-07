@@ -663,4 +663,35 @@ body {
     font-size: 1.4rem;
 }
 
+/* TURNSTILE */
+.cf-turnstile {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+#submitBtn {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    border: none;
+    font-weight: 600;
+}
+
+#submitBtn i {
+    margin-left: 0.5rem;
+    transition: all 0.3s;
+}
+
+#submitBtn:disabled i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* ===== FIN ===== */

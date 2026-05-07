@@ -223,13 +223,14 @@
     </section>
 
     <!-- CONTACTO -->
+    <!-- Reemplaza toda la sección contacto -->
     <section id="contacto" class="contacto">
         <div class="container">
             <h2>Contáctanos</h2>
             <div class="contacto-content">
                 <div class="contacto-info">
                     <h3>¡Hablemos de tu proyecto!</h3>
-                    <p>Envíanos un mensaje y te contactaremos en menos de 24 horas.</p>
+                    <p>Envíanos un mensaje seguro y te contactaremos en 24h.</p>
                     <div class="contacto-details">
                         <p><i class="fas fa-envelope"></i> contacto@pulsoing.cl</p>
                         <p><i class="fas fa-phone"></i> +56 9 7126 8624</p>
@@ -238,11 +239,19 @@
                         </a>
                     </div>
                 </div>
-                <form class="contacto-form">
-                    <input type="text" placeholder="Tu nombre" required>
-                    <input type="email" placeholder="Tu email" required>
-                    <textarea placeholder="Tu mensaje" rows="5" required></textarea>
-                    <button type="submit">Enviar Mensaje</button>
+                <form class="contacto-form" id="contactForm">
+                    <input type="text" id="nombre" placeholder="Tu nombre" required>
+                    <input type="email" id="email" placeholder="Tu email" required>
+                    <textarea id="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+
+                    <!-- TU TURNSTILE SITEKEY AQUÍ -->
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADKbN3-OoORkjWQf" data-callback="turnstileLoaded"
+                        data-size="invisible">
+                    </div>
+
+                    <button type="submit" id="submitBtn">
+                        Enviar Seguro <i class="fas fa-shield-alt"></i>
+                    </button>
                 </form>
             </div>
         </div>
@@ -255,42 +264,52 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <!-- EMAILJS (DESPUÉS de script.js) -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        emailjs.init("xnSKdlQq77ATixWxE");
+        let turnstileToken = null;
 
-        document.querySelector('.contacto-form').addEventListener('submit', function (e) {
+        function turnstileLoaded(token) {
+            turnstileToken = token;
+            console.log('✅ Turnstile OK:', token ? 'SI' : 'NO');
+        }
+
+        // FALLBACK si Turnstile falla
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            e.stopPropagation(); // ← EVITA SALTO
 
-            const form = this;
-            const nombre = form.querySelector('input[type="text"]').value;
-            const email = form.querySelector('input[type="email"]').value;
-            const mensaje = form.querySelector('textarea').value;
+            // TURNSTILE O FALLBACK
+            if (!turnstileToken) {
+                if (confirm('¿Sin verificación? ¿Continuar?')) {
+                    turnstileToken = 'manual'; // Fallback
+                } else {
+                    return;
+                }
+            }
 
-            const btn = form.querySelector('button');
-            btn.textContent = 'Enviando...';
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
             btn.disabled = true;
 
+            emailjs.init("xnSKdlQq77ATixWxE");
             emailjs.send('service_j2iw2ie', 'template_n55yi7w', {
-                from_name: nombre,
-                from_email: email,
+                from_name: document.getElementById('nombre').value,
+                from_email: document.getElementById('email').value,
                 from_phone: '+56971268624',
-                message: mensaje
+                message: document.getElementById('mensaje').value,
+                bot_score: turnstileToken || 'none'
             })
-                .then(response => {
-                    console.log('✅ ÉXITO!', response.status);
+                .then(() => {
                     alert('✅ Enviado a contacto@pulsoing.cl');
-                    form.reset();
+                    document.getElementById('contactForm').reset();
+                    turnstileToken = null;
                 })
                 .catch(error => {
-                    console.log('❌ ERROR:', error);
-                    alert('❌ ' + (error.text || 'Error desconocido'));
+                    console.error('❌', error);
+                    alert('❌ Error: ' + error.text);
                 })
                 .finally(() => {
-                    btn.textContent = 'Enviar Mensaje';
+                    btn.innerHTML = 'Enviar Seguro <i class="fas fa-shield-alt"></i>';
                     btn.disabled = false;
                 });
         });
