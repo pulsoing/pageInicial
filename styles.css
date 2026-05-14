@@ -92,7 +92,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.4rem;
 }
 
 .nav-menu a {
@@ -425,6 +425,86 @@ body {
 }
 
 /* =========================================================
+   CÓMO TRABAJAMOS
+   ========================================================= */
+
+.como-trabajamos {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.como-trabajamos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.section-intro {
+    max-width: 760px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.pasos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.paso-card {
+    position: relative;
+    background: var(--bg-light);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.paso-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.paso-numero {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 42px;
+    background: var(--accent-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow);
+}
+
+.paso-card i {
+    font-size: 2.6rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.paso-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.paso-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* =========================================================
    NOSOTROS
    ========================================================= */
 
@@ -714,12 +794,14 @@ body {
     }
 
     .servicios,
+    .como-trabajamos,
     .nosotros,
     .contacto {
         padding: 60px 0;
     }
 
     .servicios h2,
+    .como-trabajamos h2,
     .nosotros h2,
     .contacto h2 {
         font-size: 2rem;
@@ -727,6 +809,7 @@ body {
     }
 
     .servicios-grid,
+    .pasos-grid,
     .contacto-content {
         grid-template-columns: 1fr;
         gap: 2rem;

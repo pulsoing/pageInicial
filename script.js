@@ -152,7 +152,7 @@ function initContactForm() {
 
         if (typeof emailjs === 'undefined') {
             alert('❌ Error: EmailJS no se cargó correctamente.');
-            btn.innerHTML = 'Enviar Seguro <i class="fas fa-shield-alt"></i>';
+            btn.innerHTML = 'Enviar Consulta <i class="fas fa-paper-plane"></i>';
             btn.disabled = false;
             return;
         }
@@ -176,7 +176,7 @@ function initContactForm() {
                 alert('❌ Error al enviar el mensaje. Intenta nuevamente.');
             })
             .finally(() => {
-                btn.innerHTML = 'Enviar Seguro <i class="fas fa-shield-alt"></i>';
+                btn.innerHTML = 'Enviar Consulta <i class="fas fa-paper-plane"></i>';
                 btn.disabled = false;
             });
     });
