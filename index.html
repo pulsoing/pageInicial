@@ -266,54 +266,8 @@
 
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        let turnstileToken = null;
+    <script src="script.js"></script>
 
-        function turnstileLoaded(token) {
-            turnstileToken = token;
-            console.log('✅ Turnstile OK:', token ? 'SI' : 'NO');
-        }
-
-        // FALLBACK si Turnstile falla
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // TURNSTILE O FALLBACK
-            if (!turnstileToken) {
-                if (confirm('¿Sin verificación? ¿Continuar?')) {
-                    turnstileToken = 'manual'; // Fallback
-                } else {
-                    return;
-                }
-            }
-
-            const btn = document.getElementById('submitBtn');
-            btn.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
-            btn.disabled = true;
-
-            emailjs.init("xnSKdlQq77ATixWxE");
-            emailjs.send('service_j2iw2ie', 'template_n55yi7w', {
-                from_name: document.getElementById('nombre').value,
-                from_email: document.getElementById('email').value,
-                from_phone: '+56971268624',
-                message: document.getElementById('mensaje').value,
-                bot_score: turnstileToken || 'none'
-            })
-                .then(() => {
-                    alert('✅ Enviado a contacto@pulsoing.cl');
-                    document.getElementById('contactForm').reset();
-                    turnstileToken = null;
-                })
-                .catch(error => {
-                    console.error('❌', error);
-                    alert('❌ Error: ' + error.text);
-                })
-                .finally(() => {
-                    btn.innerHTML = 'Enviar Seguro <i class="fas fa-shield-alt"></i>';
-                    btn.disabled = false;
-                });
-        });
-    </script>
 </body>
 
 </html>
